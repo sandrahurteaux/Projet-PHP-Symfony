@@ -1,0 +1,46 @@
+{% extends "AdminBundle::base.html.twig" %}
+
+{% block body %}
+<main class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Commande</h1>
+
+            <table class="record_properties table table-striped"">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ entity.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Reference</th>
+                        <td>{{ entity.reference }}</td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td>{{ entity.date|date('Y-m-d H:i:s') }}</td>
+                    </tr>
+                    <tr>
+                        <th>Montant total</th>
+                        <td>{{ entity.sum }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+                <ul class="record_actions no-list">
+                    <li>
+                        <a href="{{ path('admin_orders') }}" class="btn btn-primary">
+                            Retour à la liste
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_orders_edit', { 'id': entity.id }) }}" class="btn btn-primary">
+                            Editer
+                        </a>
+                    </li>
+                    <li>{{ form(delete_form) }}</li>
+                </ul>
+        </div><!-- end .col-md-12 -->
+    </div><!-- end .row -->
+</main>
+{% endblock %}

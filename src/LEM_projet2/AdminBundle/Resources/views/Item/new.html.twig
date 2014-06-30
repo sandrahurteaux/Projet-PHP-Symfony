@@ -1,0 +1,21 @@
+{% extends "AdminBundle::base.html.twig" %}
+
+{% block body %}
+<main class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Création d'un nouveau produit</h1>
+
+            {{ form(form) }}
+
+                <ul class="record_actions no-list">
+                    <li>
+                        <a href="{{ path('admin_item') }}" class="btn btn-primary">
+                            Retour à la liste
+                        </a>
+                    </li>
+                </ul>
+        </div><!-- end .col-md-12 -->
+    </div><!-- end .row -->
+</main>
+{% endblock %}

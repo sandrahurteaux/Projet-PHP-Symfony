@@ -1,0 +1,70 @@
+{% extends "AdminBundle::base.html.twig" %}
+
+{% block body %}
+<main class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Address</h1>
+
+            <table class="record_properties table">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ entity.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Address1</th>
+                        <td>{{ entity.address1 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Address2</th>
+                        <td>{{ entity.address2 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Postalcode</th>
+                        <td>{{ entity.postalcode }}</td>
+                    </tr>
+                    <tr>
+                        <th>Town</th>
+                        <td>{{ entity.town }}</td>
+                    </tr>
+                    <tr>
+                        <th>Billing</th>
+                        <td>{{ entity.billing }}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone1</th>
+                        <td>{{ entity.phone1 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone2</th>
+                        <td>{{ entity.phone2 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Comment</th>
+                        <td>{{ entity.comment }}</td>
+                    </tr>
+                    <tr>
+                        <th>Isactive</th>
+                        <td>{{ entity.isactive }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <ul class="record_actions no-list">
+                <li>
+                    <a href="{{ path('address') }}" class="btn btn-xs btn-primary">
+                        Retour à la liste
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('address_edit', { 'id': entity.id }) }}" class="btn btn-xs btn-primary">
+                        Editer
+                    </a>
+                </li>
+                <li>{{ form(delete_form) }}</li>
+            </ul>
+        </div><!-- end .col-md-12 -->
+    </div><!-- end .row -->
+</main>
+{% endblock %}

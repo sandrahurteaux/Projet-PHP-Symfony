@@ -1,0 +1,43 @@
+{% extends "FrontBundle::base.html.twig" %}
+
+{% block title %} Mon compte {% endblock %}
+
+{% block nav %}
+    {% for category in categories %}
+           <li><a href="{{ path('category',{'id': category.id}) }}">{{ category.name }}</a></li>
+   {% endfor %}
+{% endblock %}
+                                                
+{% block body %}
+<main class="home">
+    <div class="container">
+
+        <h1>Nouvelle adresse</h1>
+        
+               
+        <div class="row">
+            <div class="col-md-3">
+                <ul>
+                    <li><a href="{{ path('mesinfos',{'id': logged_user})  }}" title="">Mes informations</a></li>
+                    <li><a href="{{ path('client_edit',{'id': logged_user}) }}" title="">Modifier mes informations</a></li>
+                    <li><a href="#" title="">Mes adresses</a></li>
+                    <li><a href="#" title="">Mes commandes</a></li>
+                </ul>
+            </div>
+            <div class="col-md-8 col-md-offset-1">
+   
+                {{ form(form) }}
+
+                <ul class="record_actions no-list">
+                    <li>
+                        <p><a href="{{ path('address') }}" class='btn btn-default'>
+                            Retour à la liste des adresses
+                        </a></p>
+                    </li>
+                </ul>
+            </div><!-- end col-md-8 -->
+       
+        </div><!-- end row -->
+    </div><!-- end .container -->
+</main>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'FrontBundle::base.html.twig' %}
+
+{% block nav %}
+
+    {% for category in categories %}       
+        <li><a href="{{ path('category',{'id': category.id}) }}">{{ category.name }}</a></li>      
+    {% endfor %}
+        
+{% endblock %}
+
+{% block body %}
+<main class="item">
+    <div class="container">
+                
+                 
+            <div class="col-md-10 col-md-offset-1">
+                <a href="{# path(categoryName) #}" title="Voir tous les produits de la catégorie {{ categoryName }}" class="label label-primary"><span>{{ categoryName }}</span></a>
+                <h1>{{ entity.name }} </h1>
+                <div class="row">
+                    <figure class="col-md-3"><img src="{{ asset('bundles/FrontBundle/img/') }}{{ entity.picture }}" alt="{{ entity.name }}" /></figure> 
+                    <div class="col-md-8 col-md-offset-1">{{ entity.description }}</div>
+
+                    <div class="price col-md-8 col-md-offset-4">
+                        <p>Prix :  <span>{{ entity.price }}</span>€</p>
+                    </div>
+                    
+                    <form method='post' action='' role='form' class='form-inline col-md-6 col-md-offset-6 basket'>
+                        <div class='form-group'>
+                            <input type='hidden' name='id' value='{{ entity.id }}' />
+                            
+                            <label for='number' class='col-sm-5 control-label'>Nombre</label>
+                            
+                            <div class="col-sm-4 col-sm-offset-1"> 
+                                <input type='number' value='' pattern='[1-9]' placeholder='0' class='form-control' />
+                            </div>
+                        </div>
+                        <button type='submit' value='' class='btn btn-default'>Ajouter au panier</button>
+                        
+                    </form>
+                </div> <!-- end .row -->
+            </div>    
+        
+       
+        
+    </div><!-- end .container -->
+</main>
+{% endblock %}

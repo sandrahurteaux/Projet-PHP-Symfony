@@ -1,0 +1,227 @@
+
+/* --- HEADER --- */
+header{
+    background-color: #333;
+    color:#FFF;
+}
+header a,
+header nav a{
+    color:#FFF;
+}
+
+header nav a:hover{
+    color:#FFF;
+}
+/* --- LOGO TITRE --- */
+#logo{
+    height: 6em;
+    padding: 1em;
+    
+}
+#logo a{
+    display: block;
+    line-height: 2.5em;
+}
+#logo a:hover{
+   text-decoration: none;
+}
+#logo span{
+    margin: 0 0 0 2em;
+    font-size: 2em;
+    vertical-align: bottom;
+    color:#7E7E7E;
+}
+
+/* --- NAV --- */
+nav .nav-tabs.nav-justified > li > a {
+    padding: 10px 15px;
+    border: none;
+}
+nav .nav-tabs.nav-justified > li > a:hover{
+    background-color: #666;
+}
+nav .nav-tabs.nav-justified > .active > a{
+    border-width: 1px 1px 0 1px;
+    border-color:#888;
+    border-style: solid;
+    border-radius: 3px 3px 0 0;
+    background:none;
+    color:#FFF;
+}
+nav .nav-tabs.nav-justified > .active > a:hover{
+    border-width: 1px 1px 0 1px;
+    border-color:#888;
+}
+
+
+/* --- MAIN --- */
+main{
+    margin-top: 2em;
+}
+.margin-top{
+    margin-top: 2em;
+}
+.align-right{
+    text-align: right;
+}
+.cartel{
+    background-color: #EEEEEE;
+    color: inherit;
+    font-weight: 200;
+    line-height: 2.14286;
+    padding: 1.5em 0;    
+}
+.col_cartel{
+    padding: 1.5em;
+    text-align: left;
+}
+.cartel h2{
+    margin-top: 0;
+    font-size:20px;
+}
+.col_cartel ul {
+    padding: 0;
+    margin: 0 0 0 1em;
+    color: #357EBD;
+    list-style-type: square;
+}
+.col_cartel ul li{
+    line-height: 1.2em;
+    margin-bottom: .6em;
+}
+
+/* --- UL et listes --- */
+ul.no-list{
+    padding: 0;
+    margin: 0;
+}
+ul.no-list li{
+    list-style-type: none;
+    padding: 0;
+    margin: .5em 0;
+}
+
+/* --- TABLE --- */
+.show-page table{
+    width: 70%;
+    margin: 0 auto;
+}
+.show-page table tr th{
+    width: 30%;
+}
+.show-page ul.no-list{
+    width: 70%;
+    margin: 2em auto;
+}
+
+/* --- FORM --- */
+button[type=submit]{
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 1.5;
+    background-color: #428BCA;
+    border: 1px solid #357EBD;
+    color: #FFFFFF;
+    -moz-user-select: none;
+    background-image: none;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: normal;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+button[type=submit]:hover {
+    background-color: #3276B1;
+    border-color: #285E8E;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+form > div > div{
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 15px;    
+}
+
+form > div > div:after{
+    clear: both;
+    content: " ";
+    display: table;
+}
+
+form > div > div > label{
+    width: 16.6667%;
+    float: left;    
+    position: relative;
+    text-align: right;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+form > div > div > input,
+form > div > div > textarea{
+    width: 83.3333%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float:left;
+}
+form > div > div > input,
+form > div > div > textarea{
+    background-color: #FFFFFF;
+    background-image: none;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555555;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    vertical-align: middle;
+}
+form > div > div > textarea{
+    height: auto;
+}
+form > div > div > input:focus,
+form > div > div > textarea:focus {
+    border-color: #66AFE9;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0 none;
+}
+
+
+form > div > div:last-of-type{
+    text-align: right;
+}
+
+
+/* ----------------------- */
+/* ---- SPECIFICITES ----- */
+/* ----------------------- */
+.admin_produit img{
+    max-height: 70px;
+    max-width: 70px
+}
+
+
+/* --- FOOTER --- */
+footer{
+    margin: 4em 0 1em 0;
+    padding: 2em 0 0 0;
+    border-top: 1px solid #DDD;
+}
+footer ul{
+    text-align: center;
+}
+footer ul li{
+    list-style-type: none;
+    display: inline;
+    padding: .5em 2em;
+}
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}ArtSpace Administration{% endblock %}</title>
+        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    
+        {% block stylesheets %}
+            <link href="{{ asset("bundles/FrontBundle/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet" />
+            <link href="{{ asset("bundles/FrontBundle/css/admin.css") }}" rel="stylesheet" />
+        {% endblock %}
+    </head>
+    
+    <body> 
+       
+        {% block header %}
+       
+           <header>
+		<div class="container">
+                    <div class="row">
+                        <div id="logo" class="logo col-xs-12 col-sm-12 col-md-12"><a href="#" title="Art.Space - Home"><img src="{{ asset("bundles/FrontBundle/img/logo_blc.png") }}" alt="Logo Art.Space"><span>Administration</span></a></div>
+                    </div>
+			
+                    <div class="row">
+			<nav class="col-xs-12 col-sm-12 col-md-12" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                  <span class="sr-only">Toggle navigation</span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                </button>
+                            </div>
+
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav nav-tabs nav-justified">
+                                            <li class="active"><a href="{{ path('index') }}">Dashboard</a></li>
+                                            <li><a href="{{ path('admin_category') }}">Catégories</a></li>
+                                            <li><a href="{{ path('admin_item') }}">Produits</a></li>
+                                            <li><a href="{{ path('admin_orders') }}">Commandes</a></li>
+                                            <li><a href="{{ path('admin_user') }}">Clients</a></li>
+                                            <li><a href="#">Logout</a></li>
+                                    </ul>
+                            </div><!-- /.navbar-collapse -->
+                        </nav>
+                    </div><!-- end row -->
+		</div>
+	</header>
+        
+        {% endblock  %}
+        {% block body %}{% endblock %}
+        
+        
+        {% block footer %}
+            <footer class="container">
+		<div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">                       
+                        <ul id="footer1">
+                            <li><a href="{{ path('admin_category') }}">Catégories</a></li>
+                            <li><a href="{{ path('admin_item') }}">Produits</a></li>
+                            <li><a href="{{ path('admin_orders') }}">Commandes</a></li>
+                            <li><a href="{{ path('admin_user') }}">Clients</a></li>
+                            <li><a href="#">Logout</a></li>
+                            <li>&copy; ArtSpace Company 2014</li>
+                        </ul>
+                    </div>
+		</div><!-- end .row -->
+		<div class="row margin-top">
+                    <div class="col-xs-12 col-sm-12 col-md-12">                       
+                        <ul id="footer1">
+                            <li><a href="http://www.symfony.com" title="Site développé avec Symfony version 2.4"> <img src="{{ asset ('bundles/FrontBundle/img/logo_sf.png') }}" alt="Site développé avec Symfony version 2.4" /></a></li>
+                        </ul>
+                    </div>
+		</div><!-- end .row -->
+	</footer>
+
+        {% endblock %}
+        
+       
+        {% block javascripts %}{% endblock %}
+    </body>
+    
+</html>

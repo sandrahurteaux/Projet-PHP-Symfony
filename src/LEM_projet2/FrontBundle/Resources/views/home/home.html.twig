@@ -1,0 +1,33 @@
+{% extends 'FrontBundle::base.html.twig' %}
+
+{% block nav %}
+    {% for category in categories %}
+        <li><a href="{{ path('category',{'id': category.id}) }}">{{ category.name }}</a></li>
+   {% endfor %}
+{% endblock %}
+                                                
+{% block body %}
+<main class="home">
+   
+    <div class="container">
+        
+        <h1>Sélection</h1>
+        <div class="row">
+        {% for entity in entities %}  
+                 
+            <div class="cartel col-md-5 col-md-offset-1">
+                <figure><a href="{{ path('item',{'id': entity.id}) }}" title="{{ entity.name }}"><img src="{{ asset('bundles/FrontBundle/img/') }}{{ entity.picture }}" alt="{{ entity.name }}" /></a></figure> 
+                <h2><a href="{{ path('item',{'id': entity.id}) }}" title="{{ entity.name }}">{{ entity.name| truncate(40, false, '...')  }}</a></h2>
+                <div>{{ entity.description| truncate(180, false, '') }}(...)</div>
+                
+                <div class="price">
+                    <p><span>{{ entity.price }}</span>€</p>
+                </div>
+                
+            </div>    
+        
+        {% endfor %}
+        </div>
+    </div><!-- end .container -->
+</main>
+{% endblock %}

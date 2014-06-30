@@ -1,0 +1,63 @@
+{% extends "AdminBundle::base.html.twig" %}
+
+{% block body %}
+<main class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Utilisateurs</h1>
+
+            <table class="record_properties table">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ entity.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Username</th>
+                        <td>{{ entity.username }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prénom</th>
+                        <td>{{ entity.firstName }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ entity.lastName }}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{ entity.email }}</td>
+                    </tr>
+                    <tr>
+                        <th>Isactive</th>
+                        <td>{{ entity.isactive }}</td>
+                    </tr>
+                    <tr>
+                        <th>Roles</th>
+                        <td>
+                              {% for role in  entity.roles %}
+                                    {{ role }}
+                              {% endfor %}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <ul class="record_actions no-list">
+                <li>
+                    <a href="{{ path('admin_user') }}" class='btn btn-primary'>
+                        Retour à la liste
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_user_edit', { 'id': entity.id }) }}" class='btn btn-primary'>
+                        Editer
+                    </a>
+                </li>
+                <li>{{ form(delete_form) }}</li>
+            </ul>
+        </div><!-- end .col-md-12 -->
+    </div><!-- end .row -->
+</main>
+{% endblock %}
+

@@ -1,0 +1,57 @@
+{% extends "FrontBundle::base.html.twig" %}
+
+{% block title %} Mes Coordonnées {% endblock %}
+
+{% block nav %}
+    {% for category in categories %}
+           <li><a href="{{ path('category',{'id': category.id}) }}">{{ category.name }}</a></li>
+   {% endfor %}
+{% endblock %}
+
+{% block body %}
+<main class="container">
+            <h1>Bienvenue {{ entity.firstName }} {{ entity.lastName }}</h1>
+            
+    <div class="row">
+            
+        <div class="col-md-3">
+            <ul>
+                <li class="active"><a href="{{ path('mesinfos',{'id': entity.id})  }}" title="">Mes informations</a></li>
+                <li><a href="{{ path('client_edit',{'id': entity.id}) }}" title="">Modifier mes informations</a></li>
+                <li><a href="{{ path('mesadresses') }}" title="">Mes adresses</a></li>
+                <li><a href="#" title="">Mes commandes</a></li>
+            </ul>
+        </div>
+        <div class="col-md-8 col-md-offset-1">
+            
+                      
+            <table class="record_properties table table-striped">
+                <tbody>
+                    <tr>
+                        <th>Prénom</th>
+                        <td>{{ entity.firstName }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ entity.lastName }}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{ entity.email }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+                <ul class="record_actions no-list">            
+                    <li>
+                        <a href="{{ path('client_edit',{'id': entity.id}) }}" class="btn btn-primary">
+                            Editer
+                        </a>
+                    </li>
+                </ul>
+        </div>
+
+    </div><!-- end .row -->
+</main>
+{% endblock %}
+

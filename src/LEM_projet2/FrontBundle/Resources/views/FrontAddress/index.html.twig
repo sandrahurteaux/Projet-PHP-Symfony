@@ -1,0 +1,57 @@
+{% extends "FrontBundle::base.html.twig" %}
+
+{% block title %} Mon compte {% endblock %}
+
+{% block nav %}
+    {% for category in categories %}
+           <li><a href="{{ path('category',{'id': category.id}) }}">{{ category.name }}</a></li>
+   {% endfor %}
+{% endblock %}
+                                                
+{% block body %}
+<main class="home">
+    <div class="container">
+
+        <h1>Mes adresses</h1>
+        
+               
+        <div class="row">
+            <div class="col-md-3">
+                <ul>
+                    <li><a href="{{ path('mesinfos',{'id': logged_user})  }}" title="">Mes informations</a></li>
+                    <li><a href="{{ path('client_edit',{'id': logged_user}) }}" title="">Modifier mes informations</a></li>
+                    <li><a href="{{ path('mesadresses') }}" title="">Mes adresses</a></li>
+                    <li><a href="#" title="">Mes commandes</a></li>
+                </ul>
+            </div>
+            <div class="col-md-8 col-md-offset-1">
+              {#{ dump(entities) }#}
+
+                <div class="row">
+                    
+                    
+                    {% for entity in entities %}
+                        <div class="address col-md-3 col-md-offset-1">                            
+                            <p> {{ entity.address1 }}<br/>
+                                {{ entity.address2 }}<br/>
+                                {{ entity.postalcode }}<br/>
+                                {{ entity.town }}</p>
+                            <p>Facturation : {{ entity.billing }}</p>
+                            <p> {{ entity.phone1 }}<br/>
+                                {{ entity.phone2 }}</p>
+                            <p>{{ entity.comment }}</p>                           
+                            
+                            <p><a href="{{ path('modifieradresse', { 'id': entity.id }) }}" class="btn btn-xs btn-default">éditer</a></p>
+                        </div>
+                    {% endfor %}
+                    </div> <!-- end .row -->
+                    
+                    <div class="right"><a href="{{ path('nouvelleadresse') }}" class="btn btn-primary btn-sm">Ajouter une adresse</a></div>
+                    <div class="clearfix"></div>
+                
+            </div><!-- end col-md-8 -->
+       
+        </div><!-- end row -->
+    </div><!-- end .container -->
+</main>
+{% endblock %}

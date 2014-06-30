@@ -1,0 +1,53 @@
+default:
+    pattern: /
+    defaults: { _controller: FrontBundle:Default:base}
+
+# Routage défini dans le controlleur
+home:
+    resource: "@FrontBundle/Controller/HomeController.php"
+    type: annotation 
+    
+item:
+    resource: "@FrontBundle/Controller/FrontItemController.php"
+    type: annotation 
+    
+category:
+    resource: "@FrontBundle/Controller/FrontCategoryController.php"
+    type: annotation 
+    
+client:
+    resource: "@FrontBundle/Controller/FrontUserController.php"
+    type: annotation 
+    
+mesinfos:
+    resource: "@FrontBundle/Controller/FrontUserController.php"
+    type: annotation 
+    
+client_edit:
+    resource: "@FrontBundle/Controller/FrontUserController.php"
+    type: annotation 
+    
+inscription:
+    resource: "@FrontBundle/Controller/InscriptionController.php"
+    type: annotation    
+    
+confirmation:
+    resource: "@FrontBundle/Controller/InscriptionController.php"
+    type: annotation    
+    
+login:
+    resource: "@FrontBundle/Controller/SecurityController.php"
+    type: annotation
+    
+    
+mesadresses:
+    resource: "@FrontBundle/Controller/FrontAddressController.php"
+    type: annotation
+    
+login_check:
+    pattern:   /login_check
+    
+logout:
+    pattern:   /logout
+    
+    

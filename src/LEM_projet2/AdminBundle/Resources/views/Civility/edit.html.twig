@@ -1,0 +1,22 @@
+{% extends "AdminBundle::base.html.twig" %}
+
+{% block body %}
+<main class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Edition Civilité</h1>
+
+            {{ form(edit_form) }}
+
+            <ul class="record_actions no-list">
+                <li>
+                    <a href="{{ path('admin_civility') }}" class="btn btn-primary">
+                        Retour à la liste
+                    </a>
+                </li>
+                <li>{{ form(delete_form) }}</li>
+            </ul>
+        </div><!-- end .col-md-12 -->
+    </div><!-- end .row -->
+</main>
+{% endblock %}

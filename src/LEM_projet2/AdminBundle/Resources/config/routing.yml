@@ -1,0 +1,37 @@
+# Routage défini dans le controlleur
+index:
+    resource: "@AdminBundle/Controller/IndexController.php"
+    type: annotation 
+    
+user:
+    resource: "@AdminBundle/Controller/UserController.php"
+    type: annotation 
+    
+Address:
+    resource: "@AdminBundle/Controller/AddressController.php"
+    type: annotation 
+    
+category:
+    resource: "@AdminBundle/Controller/CategoryController.php"
+    type: annotation 
+    
+item:
+    resource: "@AdminBundle/Controller/ItemController.php"
+    type: annotation 
+    
+orders:
+    resource: "@AdminBundle/Controller/OrdersController.php"
+    type: annotation 
+    
+payment:
+    resource: "@AdminBundle/Controller/PaymentController.php"
+    type: annotation 
+    
+stateorder:
+    resource: "@AdminBundle/Controller/StateOrderController.php"
+    type: annotation 
+    
+civility:
+    resource: "@AdminBundle/Controller/CivilityController.php"
+    type: annotation 
+   

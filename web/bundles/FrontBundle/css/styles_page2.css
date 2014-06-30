@@ -1,0 +1,345 @@
+.headlines{
+  background: url(../img/hero-pricing.jpg) center no-repeat transparent;
+}
+
+.headlines h1{
+    width: 80%;
+    background-size: 30% 5%;
+}
+.page_interieure .headlines button{
+  background-color: #1C1C1C; 
+  color: #FFF;
+  margin: 5em;
+}
+.page_interieure .headlines button:active,
+.page_interieure .headlines button:hover{
+  background-color: #58CB8E; 
+}
+
+
+/* ----------------------------------- */
+/* -------- details_commande --------- */
+/* ----------------------------------- */
+main > div:first-of-type{
+  margin-top: 6em;
+}
+.details_commande div.entree_prix{
+  position: relative;
+  background-color: #191919;
+  width: 100%;
+  padding: 2em 5em;
+  text-align: center;
+  color:#FFF;
+}
+.details_commande div h2{
+  display: inline-block;
+  margin : 0 auto .8em;
+  border-bottom: 2px solid #FFF;
+  color:#FFF;
+}
+.details_commande p.prix{
+  text-transform: uppercase;
+  color: #919191;
+}
+.details_commande p sup {
+    color: #FFFFFF;
+    font-size: 1.5em;
+    top: -2.6em;
+}
+.details_commande p.prix span{
+  font-size: 7em;
+  color: #FFF;
+  letter-spacing: -.1em;
+  padding: 0 .1em;
+}
+
+.details_commande p.detailBill{
+  font-family: Georgia, "Times new roman", serif;
+  font-style: italic;
+  font-size: 1em;
+  color: #666;
+}
+
+.ouverture{
+  display: none;
+}
+
+.contenu_tooltip{
+  display: none;
+}
+.tooltip-inner{
+  background-color: #1c1c1c;
+  padding: 2em 2em 2em 4.5em;
+  max-width: 27em;
+  text-align: left;
+  color:#b1c4c8;
+}
+.tooltip-inner h3{
+  margin: 0 0 .6em;
+  color: #FFF;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: none;
+}
+.tooltip-inner h3:before{
+  content : "i";
+  font-style: italic;
+  font-family: "Times new roman";
+  font-size: 2em;
+  margin-left: -0.8em;
+  padding: 0 0.5em 0 0;
+}
+
+/* --- LISTE --- */
+
+.details_commande ul li{
+    color: #787878;
+    display: block;
+    padding: 1em 0 1em 6em;
+    border-bottom: 1px solid #eaeaea;
+}
+.details_commande ul li strong{
+    color: #1c1c1c;
+}
+.details_commande ul li:hover,
+.details_commande ul li:hover strong{
+  color: #58CB8E;
+}
+
+span.pastille{
+  top:-14%;
+  right: -6%;
+  height: 70px;
+  width: 70px;
+  padding: 1.3em 0;
+  border-radius: 50px;
+  font-size: .85em;
+}
+
+li.pastille{
+  position: relative;
+}
+li span.pastille{
+  right: 55%;
+  top: 8%;
+  width: 40px;
+  height: 40px;
+  padding: 1.1em 0;
+  border-radius: 30px;
+  font-size: .75em;
+}
+
+/* ---------------------- */
+/* -------- FAQ --------- */
+/* ---------------------- */
+.page_interieure section.faq dl dd{
+  width: 90%;
+}
+.page_interieure section.faq dl dt{
+  display: inline-block;
+  margin: 3em 0 .7em;
+  padding: 0 0 .7em ;
+  border-bottom: 1px solid #303030;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: bold;
+}
+.page_interieure section.faq dl dd{
+  color: #787878;
+}
+.page_interieure section.faq dl dd span{
+  font-weight: bold;
+}
+.page_interieure section.faq dl dd a{
+  color : #58CB8E;
+}
+
+
+
+/* ------- DEBUT max-width=800px ---------- */
+/* ------- DEBUT max-width=800px ---------- */
+/* ------- DEBUT max-width=800px ---------- */
+
+@media screen  and (max-width:800px){
+  .headlines{
+    height: 450px; 
+  }
+  h2{
+    width: 100%;
+  }
+
+  span.pastille{
+    top : -9% ;
+    right: -9%; 
+  }
+  li span.pastille{
+    right:30%;
+  }
+  .details_commande p.prix span{
+    font-size: 4em;
+    line-height: 1em;
+  }
+  .details_commande p sup {
+    top: -1.3em;
+  }
+  .details_commande p.detailBill {
+    font-size: 0.9em;
+    margin-top: .7em;
+  }
+  p.prix,
+  p.detailBill{
+    float: left;
+    width: 50%;
+    vertical-align: bo
+  }
+
+  span.pastille {
+    right: -5%;
+    top: -5%;
+    font-size: 0.75em;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+  }
+
+}
+
+/* ------- fin max-width=800px ---------- */
+/* ------- fin max-width=800px ---------- */
+/* ------- fin max-width=800px ---------- */
+
+/* ------- debut max-width=640px ---------- */
+/* ------- debut max-width=640px ---------- */
+/* ------- debut max-width=640px ---------- */
+@media screen  and (max-width:640px){
+  .details_commande{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .details_commande div.entree_prix{
+    position: relative;    
+    padding: 2em;
+  }
+  .details_commande:nth-child(2) div.entree_prix{
+    margin-top: 3em; 
+  }
+
+  .ouverture{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right:1em;
+    width: 32px;
+    height: 32px;
+    background: url(../img/down_arrow_grey.png) bottom center;
+  }
+  .entree_prix:hover .ouverture{
+    background-image: url(../img/down_arrow_white.png);
+  }
+
+  /* --- FAQ --- */
+  .page_interieure dl:first-of-type{
+    margin-top: 3em;
+    border-top: 1px solid #DDD;
+  }
+  .page_interieure section.faq dl dt {
+    display: block;
+  }
+  .page_interieure section.faq dl dt:after {
+    content:url(../img/down_arrow_grey191919.png);
+   position: absolute;
+   right: 2em;
+  }
+
+}
+
+/* ------- debut max-width=480px ---------- */
+/* ------- debut max-width=480px ---------- */
+/* ------- debut max-width=480px ---------- */
+
+@media screen  and (max-width:480px){
+  .headlines{
+    height: 250px;
+  }
+  .headlines h1 {
+    margin-top: 1em;
+  }
+  .page_interieure .headlines button{
+    margin: 2.5em 0 0;
+  }
+  main > div:first-of-type {
+    margin-top: 3em;
+  }
+
+  .details_commande div.entree_prix{
+    padding: 1em 3em;
+  }
+  .details_commande div h2{
+    font-size: 1.1em;
+  }
+  .details_commande p{
+    float: left;
+    width: 50%;
+  }
+  .details_commande div p.prix span{
+    font-size: 5em;
+  }
+  .details_commande div p.detailBill{
+    padding: 2em 0;
+  }
+  li span.pastille {
+    right: 30%;
+  }
+  .page_interieure section.faq dl dt {
+    margin: 1.5em 0 0.7em;
+  }
+}
+
+/* ------- fin max-width=480px ---------- */
+/* ------- fin max-width=480px ---------- */
+/* ------- fin max-width=480px ---------- */
+
+/* ------- debut max-width=360px ---------- */
+/* ------- debut max-width=360px ---------- */
+/* ------- debut max-width=360px ---------- */
+
+@media screen  and (max-width:360px){
+  .page_interieure .headlines h1{
+    background-size: 50% 1%;
+  }
+  .page_interieure .headlines button{
+    margin: 3em auto;
+  }
+
+  .details_commande div.entree_prix {
+      padding: 1em;
+  }
+  .details_commande p{
+    margin-top: 0.7em;
+    padding: 0;
+  }
+  .details_commande div p.prix span {
+    font-size: 4em;
+  }
+  .details_commande div p.detailBill {
+    padding: 0 0 0 .3em;
+    text-align: left;
+  }
+  .details_commande ul li {
+    padding: 1em 0 1em 2em;
+  }
+  li span.pastille {
+    right: 20%;
+    border-radius: 7px;
+    font-size: 0.75em;
+    height: auto;
+    padding: 0.3em 0;
+    top: 27%;
+    width: 47px;
+  }
+  .page_interieure section.faq dl dt{
+    font-size: 0.9em;
+  }
+
+
+}

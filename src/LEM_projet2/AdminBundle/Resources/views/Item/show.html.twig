@@ -1,0 +1,59 @@
+{% extends "AdminBundle::base.html.twig" %}
+
+{% block body -%}
+<main class="container show-page">
+    <div class="row">
+        <div class="col-md-12">
+            
+            <h1>Edition du produit <span>{{ entity.name }}</span></h1>
+
+            <table class="record_properties table table-striped">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ entity.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Reference</th>
+                        <td>{{ entity.reference }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ entity.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td>{{ entity.description }}</td>
+                    </tr>
+                    <tr>
+                        <th>Image</th>
+                        <td>{{ entity.picture }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prix</th>
+                        <td>{{ entity.price }}</td>
+                    </tr>
+                    <tr>
+                        <th>Stock</th>
+                        <td>{{ entity.stock }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+                <ul class="record_actions no-list">
+            <li>
+                <a href="{{ path('admin_item') }}" class="btn btn-primary btn-xs">
+                    Retour à la liste
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('admin_item_edit', { 'id': entity.id }) }}" class="btn btn-primary btn-xs">
+                    Editer
+                </a>
+            </li>
+            <li>{{ form(delete_form) }}</li>
+        </ul>
+        </div><!-- end .col-md-12 -->
+    </div><!-- end .row -->
+</main>
+{% endblock %}

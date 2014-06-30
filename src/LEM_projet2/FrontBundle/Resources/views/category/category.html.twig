@@ -1,0 +1,41 @@
+{% extends 'FrontBundle::base.html.twig' %}
+
+{% block nav %}
+
+    {% for cat in categories %}
+        {% if cat.id == entity.id %}
+            <li class="active"><a href="{{ path('category',{'id': cat.id}) }}" >{{ cat.name }}</a></li>
+        {% else %}
+            <li><a href="{{ path('category',{'id': cat.id}) }}">{{ cat.name }}</a></li>
+        {% endif %}
+    {% endfor %}
+            
+{% endblock %}
+            
+{% block body %}
+<main class="category">
+    <div class="container">
+        
+        <div class="row"><h1 class="col-md-12">{{entity.name}}</h1></div>
+        <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+           
+            <table class="table table-striped">
+            {% for item in items %}
+                <tr>                
+                    <td><a href="{{path('item',{'id': item.id})}}" title="{{ item.name }}"><img src="{{asset('bundles/FrontBundle/img/') }}{{ item.picture }}" alt="" /></a></td>
+                    <td>
+                        <h2><a href="{{path('item',{'id': item.id})}}" title="{{ item.name }}">{{ item.name }}</a></h2>
+                        <div><a href="{{path('item',{'id': item.id})}}" title="{{ item.name }}">{{ item.description|truncate(250, false, '') }}(...).</a></div>
+                    </td>
+                    <td><div class="price">{{ item.price }}€</div></td>
+                </tr>
+            {%  endfor %}
+            </table>
+            
+           </div><!-- end .col-md-10 -->
+        </div>  <!-- end .row -->
+    
+    </div><!-- end .container -->
+</main>
+{% endblock %}

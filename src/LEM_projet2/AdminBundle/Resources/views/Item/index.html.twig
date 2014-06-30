@@ -1,0 +1,58 @@
+{% extends "AdminBundle::base.html.twig" %}
+
+{% block body -%}
+<main class="container admin_produit">
+    <div class="row">
+        <div class="col-md-12">
+        <h1>Liste des produits</h1>
+
+        <table class="records_list table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Reference</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Prix</th>
+                    <th>Stock</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('admin_item_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.reference }}</td>
+                    <td>{{ entity.name }}</td>
+                    <td>{{ entity.description | truncate(250, false, '...')}}</td>
+                    <td><img src="{{ asset('bundles/FrontBundle/img/') }}{{ entity.picture }}" /></td>
+                    <td>{{ entity.price }}</td>
+                    <td>{{ entity.stock }}</td>
+                    <td>
+                    <ul class="no-list">
+                        <li>
+                            <a href="{{ path('admin_item_show', { 'id': entity.id }) }}" class="btn btn-primary btn-xs">voir</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_item_edit', { 'id': entity.id }) }}" class="btn btn-default btn-xs">éditer</a>
+                        </li>
+                    </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+            <ul class="no-list">
+            <li>
+                <a href="{{ path('admin_item_new') }}" class="btn btn-primary">
+                    Création d'une nouvelle entrée
+                </a>
+            </li>
+        </ul>
+        
+        </div><!-- end .col-md-12 -->
+    </div><!-- end .row -->
+</main>
+    {% endblock %}

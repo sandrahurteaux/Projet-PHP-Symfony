@@ -1,0 +1,61 @@
+{% extends "AdminBundle::base.html.twig" %}
+
+{% block body %}
+<main class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Liste des utilisateurs</h1>
+
+            <table class="records_list table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Username</th>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Mot de passe</th>
+                        <th>Rôles</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for entity in entities %}
+                    <tr>
+                        <td><a href="{{ path('admin_user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                        <td>{{ entity.username }}</td>
+                        <td>{{ entity.firstName }}</td>
+                        <td>{{ entity.lastName }}</td>
+                        <td>{{ entity.email }}</td>
+                        <td>{{ entity.isactive }}</td>
+                        <td>
+                              {% for role in  entity.roles %}
+                                    {{ role }}
+                              {% endfor %}
+                        </td>
+                        <td>
+                        <ul class="no-list">
+                            <li>
+                                <a href="{{ path('admin_user_show', { 'id': entity.id }) }}" class='btn btn-xs btn-default'>show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('admin_user_edit', { 'id': entity.id }) }}" class='btn btn-xs btn-default'>edit</a>
+                            </li>
+                        </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <ul class="no-list">
+                <li>
+                    <a href="{{ path('admin_user_new') }}" class='btn btn-primary'>
+                        Créer un nouvel utilisateur
+                    </a>
+                </li>
+            </ul>
+        </div><!-- end .col-md-12 -->
+    </div><!-- end .row -->
+</main>
+{% endblock %}
